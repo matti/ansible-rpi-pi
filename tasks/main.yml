@@ -1,0 +1,6 @@
+---
+- user: name=pi
+- user: name=pi groups=sudo append=yes
+
+- name: set authorized_key
+  authorized_key: user=pi key="{{ lookup('file', '/Users/mpa/.ssh/id_rsa.pub') }}"
